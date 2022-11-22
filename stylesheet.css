@@ -27,6 +27,17 @@ body {
     flex: 1;
 }
 
+#solution {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px;
+    gap: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
 #answer.correct {
     background-color: rgb(149, 204, 68);
 }
