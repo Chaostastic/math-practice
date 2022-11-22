@@ -16,7 +16,6 @@ export function replaceWild(element, wild) {
     }
 }
 
-export function check(inputNode, solutionContainer, wild) {
-    inputNode.classList.add((+inputNode.value === wild.answer) ? "correct" : "false")
-    solutionContainer.classList.remove("hidden")
+export function check(inputNode, answer) {
+    inputNode.classList.add((+inputNode.value === answer) ? "correct" : "false")
 }

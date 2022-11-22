@@ -1,6 +1,6 @@
 import {randomInt, round, replaceWild, check} from "/util.js";
 
-const answerInput = document.querySelector("#answer")
+const answerInput = document.querySelector(".answer")
 const answerSubmit = document.querySelector("#answer-submit")
 const solutionContainer = document.querySelector("#solution-container")
 const solution = document.querySelector("#solution")
@@ -24,6 +24,9 @@ wildCards.mid6 = Math.pow((wildCards.mid3),2)
 wildCards.mid7 = wildCards.mid4 + wildCards.mid5 + wildCards.mid6
 wildCards.answer = round(Math.sqrt(wildCards.mid7), 1)
 
-replaceWild(exercise, wildCards, false)
-replaceWild(solution, wildCards, true)
-answerSubmit.addEventListener("click", () => check(answerInput, solutionContainer, wildCards))
+replaceWild(exercise, wildCards)
+replaceWild(solution, wildCards)
+answerSubmit.addEventListener("click", () => {
+    check(answerInput, wildCards.answer)
+    solutionContainer.classList.remove("hidden")
+})
