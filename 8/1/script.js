@@ -1,3 +1,5 @@
+import {randomInt, round, replaceWild, check} from "/util.js";
+
 const answerInput = document.querySelector("#answer")
 const answerSubmit = document.querySelector("#answer-submit")
 const solutionContainer = document.querySelector("#solution-container")
@@ -22,29 +24,6 @@ wildCards.mid6 = Math.pow((wildCards.mid3),2)
 wildCards.mid7 = wildCards.mid4 + wildCards.mid5 + wildCards.mid6
 wildCards.answer = round(Math.sqrt(wildCards.mid7), 1)
 
-function round(num, decimal) {
-    return Math.round(num * Math.pow(10, decimal)) /  Math.pow(10, decimal)
-}
-
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-function replaceWild(element, wild, surroundNegative) {
-    for (const key in wild) {
-        //normal wildcards
-        element.textContent = element.textContent.replace(`{${key}}`, wild[key])
-        //wildcards that have to be surrounded by brackets if negative
-        const value = (wild[key] < 0) ? `(${wild[key]})` : wild[key]
-        element.textContent = element.textContent.replace(`{-b ${key}}`, value)
-    }
-}
-
-function check() {
-    answerInput.classList.add((+answerInput.value === wildCards.answer) ? "correct" : "false")
-    solutionContainer.classList.remove("hidden")
-}
-
 replaceWild(exercise, wildCards, false)
 replaceWild(solution, wildCards, true)
-answerSubmit.addEventListener("click", check)
+answerSubmit.addEventListener("click", () => check(answerInput, solutionContainer, wildCards))
