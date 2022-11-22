@@ -1,10 +1,14 @@
 const wildCards = {
-    x1: 1,
-    y1: 2,
-    z1: 3,
-    x2: -1,
-    y2: -2,
-    z2: -3,
+    x1: randomInt(-9, 9),
+    y1: randomInt(-9, 9),
+    z1: randomInt(-9, 9),
+    x2: randomInt(-9, 9),
+    y2: randomInt(-9, 9),
+    z2: randomInt(-9, 9),
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 function replaceWild(element) {
