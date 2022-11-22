@@ -26,3 +26,11 @@ body {
 #page-content {
     flex: 1;
 }
+
+#answer.correct {
+    background-color: rgb(149, 204, 68);
+}
+
+#answer.false {
+    background-color: rgb(226, 85, 75);
+}
