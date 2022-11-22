@@ -1,26 +1,24 @@
 body {
     display: flex;
-    gap: 16px;
-}
-
-#exercise,
-#sidebar {
-    background: rgb(255, 249, 215);
-    padding: 32px;
-    border-radius: 16px;
-    border: 1px solid black;
-    box-shadow: 2px 2px 3px black;
+    background-color: rgb(255, 253, 219);
+    margin: 0;
 }
 
 #sidebar {
-    width: 200px;
-    height: 90vh;
+    background: rgb(219, 233, 139);
+    width: 256px;
+    min-height: 100vh;
+    flex: none;
 }
 
 #exercise {
+    background: rgb(250, 224, 177);
+    padding: 32px;
+    border: 2px solid rgb(134, 154, 160);
+    box-shadow: 2px 2px 3px black;
     font-size: 24px;
     align-self: flex-start;
-    margin-bottom: 16px;
+    margin: 16px;
 }
 
 #page-content {
@@ -30,8 +28,28 @@ body {
 #solution {
     display: flex;
     flex-wrap: wrap;
+    margin: 24px;
+    gap: 16px 0;
+    font-size: 20px;
+}
+
+#answer-container {
+    background: rgb(250, 224, 177);
+    border: 2px solid rgb(134, 154, 160);
+    box-shadow: 2px 2px 3px black;
+    font-size: 24px;
     margin: 16px;
-    gap: 16px;
+    padding: 16px;
+}
+
+#answer-container,
+#answer-submit,
+#answer {
+    font-size: 24px;
+}
+
+#answer {
+    width: 200px;
 }
 
 .hidden {
