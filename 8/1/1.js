@@ -1,24 +1,4 @@
-function round(num, decimal) {
-    return Math.round(num * Math.pow(10, decimal)) /  Math.pow(10, decimal)
-}
-
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
-function replaceWild(element, wild) {
-    for (const key in wild) {
-        //normal wildcards
-        element.textContent = element.textContent.replace(`{${key}}`, wild[key])
-        //wildcards that have to be surrounded by brackets if negative
-        const value = (wild[key] < 0) ? `(${wild[key]})` : wild[key]
-        element.textContent = element.textContent.replace(`{-b ${key}}`, value)
-    }
-}
-
-function check(inputNode, answer) {
-    inputNode.classList.add((+inputNode.value === answer) ? "correct" : "false")
-}
+import {randomInt, round, replaceWild, check} from "../../util.js";
 
 const answerInput = document.querySelector(".answer")
 const answerSubmit = document.querySelector("#answer-submit")
