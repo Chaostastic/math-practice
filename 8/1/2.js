@@ -1,4 +1,4 @@
-import {randomInt, replaceWild, check} from "/util.js";
+import {randomInt, replaceWild, check} from "../../util.js";
 
 const answerInputs = document.querySelectorAll(".answer")
 const answerSubmit = document.querySelector("#answer-submit")
