@@ -16,6 +16,7 @@ export function replaceWild(element, wild) {
     }
 }
 
-export function check(inputNode, answer) {
-    inputNode.classList.add((+inputNode.value === answer) ? "correct" : "false")
+export function check(inputNode, correctAnswer) {
+    const answer = +inputNode.value.replace(",", ".")
+    inputNode.classList.add((answer === correctAnswer) ? "correct" : "false")
 }
