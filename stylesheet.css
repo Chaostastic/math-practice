@@ -4,9 +4,13 @@ body {
     margin: 0;
 }
 
+ol {
+    padding-inline-start: 16px;
+}
+
 #sidebar {
     background: rgb(219, 233, 139);
-    width: 256px;
+    width: 400px;
     min-height: 100vh;
     flex: none;
 }
