@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 
-ol {
+ul {
     padding-inline-start: 16px;
 }
 
@@ -12,6 +12,7 @@ ol {
     background: rgb(219, 233, 139);
     width: 400px;
     min-height: 100vh;
+    padding: 16px;
     flex: none;
 }
 
