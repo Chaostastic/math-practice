@@ -16,12 +16,15 @@ export function replaceWild(element, wild) {
         //wildcards that have to be surrounded by brackets if negative
         const valueB = (wild[key] < 0) ? `(${wild[key]})` : wild[key]
         element.textContent = element.textContent.replaceAll(`{-b ${key}}`, valueB)
-        //wildcards that require a + prefix if positive
-        const valueP = (wild[key] >= 0) ? `+${wild[key]}` : wild[key]
+        //wildcards that include a prefix, wont display at all if 0
+        const valueP = (wild[key] > 0) ? `+${wild[key]}` : (wild[key] === 0) ? "" : wild[key]
         element.textContent = element.textContent.replaceAll(`{-p ${key}}`, valueP)
         //wildcards that hide value if 1 or -1
         const valueH = (wild[key] === 1) ? "" : (wild[key] === -1) ? "-" : wild[key]
         element.textContent = element.textContent.replaceAll(`{-h ${key}}`, valueH)
+        //wildcards that dont display if 0, must include prefix
+        const valueD = (wild[key] === 0) ? "" : valueP
+        element.textContent = element.textContent.replaceAll(`{-d ${key}}`, valueD)
     }
 }
 
