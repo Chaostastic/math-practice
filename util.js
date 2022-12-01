@@ -4,7 +4,7 @@ export function round(num, decimal) {
 
 export function randomInt(min = 0, max = 1, ...illegal) {
     const random = Math.floor(Math.random() * (max - min + 1)) + min
-    return (illegal.includes(random)) ? max : random
+    return (illegal.includes(random)) ? randomInt(...arguments) : random
 }
 
 export function replaceWild(element, wild) {
