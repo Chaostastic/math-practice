@@ -36,8 +36,10 @@ if (wildCards.mid5 === 1) {
     solutionTeX[2] = "\\({-h mid5} = {mid6}\\qquad\\)"
     if (wildCards.mid6 === 0) {
         solutionTeX[3] = "\\(x \\in \\mathbb{R}\\)"
+        wildCards.answer = "R"
     } else {
         solutionTeX[3] = "\\(x \\in \\varnothing\\)"
+        wildCards.answer = "-"
     }
 }
 
