@@ -7,7 +7,7 @@ const solution = document.querySelector("#solution")
 const exercise = document.querySelector("#exercise")
 
 const wildCards = {
-    a: randomInt(-10, 10, false),
+    a: randomInt(-10, 10, 0),
     b: randomInt(-10, 10),
     answer: randomInt(-5, 5),
 }
