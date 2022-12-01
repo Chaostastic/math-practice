@@ -7,12 +7,13 @@ const solution = document.querySelector("#solution")
 const exercise = document.querySelector("#exercise")
 
 const wildCards = {
-    a: randomInt(-5, 5) * 2,
+    a: randomInt(-10, 10, false),
     b: randomInt(-10, 10),
-    answer: randomInt(-9, 9) / 2
+    answer: randomInt(-6, 5),
 }
 
 wildCards.mid1 = wildCards.b * -1
+wildCards.answer += (wildCards.a % 2 === 0) ? 0.5 : 0
 wildCards.mid2 = wildCards.a * wildCards.answer
 wildCards.c = wildCards.mid2 - wildCards.mid1
 

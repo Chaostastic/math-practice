@@ -2,8 +2,9 @@ export function round(num, decimal) {
     return Math.round(num * Math.pow(10, decimal)) /  Math.pow(10, decimal)
 }
 
-export function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min
+export function randomInt(min, max, allowZero) {
+    const random = Math.floor(Math.random() * (max - min + 1)) + min
+    return (!allowZero && random === 0) ? max : random
 }
 
 export function replaceWild(element, wild) {
