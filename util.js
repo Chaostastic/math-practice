@@ -9,15 +9,15 @@ export function randomInt(min, max) {
 export function replaceWild(element, wild) {
     
     for (const key in wild) {
-        let value = wild[key]
         //normal wildcards
+        const value = wild[key]
         element.textContent = element.textContent.replaceAll(`{${key}}`, value)
         //wildcards that have to be surrounded by brackets if negative
-        if (wild[key] < 0) value = `(${wild[key]})`
-        element.textContent = element.textContent.replaceAll(`{-b ${key}}`, value)
+        const valueB = (wild[key] < 0) ? `(${wild[key]})` : wild[key]
+        element.textContent = element.textContent.replaceAll(`{-b ${key}}`, valueB)
         //wildcards that require a + prefix if positive
-        if (wild[key] >= 0) value = `+${wild[key]}`
-        element.textContent = element.textContent.replaceAll(`{-p ${key}}`, value)
+        const valueP = (wild[key] >= 0) ? `+${wild[key]}` : wild[key]
+        element.textContent = element.textContent.replaceAll(`{-p ${key}}`, valueP)
     }
 }
 
