@@ -19,6 +19,9 @@ export function replaceWild(element, wild) {
         //wildcards that require a + prefix if positive
         const valueP = (wild[key] >= 0) ? `+${wild[key]}` : wild[key]
         element.textContent = element.textContent.replaceAll(`{-p ${key}}`, valueP)
+        //wildcards that hide value if 1 or -1
+        const valueH = (wild[key] === 1) ? "" : (wild[key] === -1) ? "-" : wild[key]
+        element.textContent = element.textContent.replaceAll(`{-h ${key}}`, valueH)
     }
 }
 
