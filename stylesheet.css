@@ -30,12 +30,18 @@ ul {
     flex: 1;
 }
 
+#formulaes {
+    flex: 1;
+    padding: 32px;
+    font-size: 36px;
+}
+
 #solution {
     display: flex;
     flex-wrap: wrap;
     margin: 24px;
     gap: 16px 0;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #answer-container {
